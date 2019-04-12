@@ -11,7 +11,9 @@
         <router-link to="/about">About</router-link>|
         <a @click="changeLang">切换语言</a>
       </div>
-      <router-view/>
+      <v-content>
+        <router-view/>
+      </v-content>
     </v-app>
   </div>
 </template>
