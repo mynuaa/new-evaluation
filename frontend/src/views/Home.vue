@@ -2,7 +2,7 @@
   <v-container>
     <Banner msg="请确保登录信息与教务处或研究生院网站完全一致。如出现票数投向陌生人的现象，请及时与校团委联系，并提供截图。"/>
     <v-img :src="require('../assets/banner.jpg')" height="570" class="grey darken-4"></v-img>
-    <v-layout class="filiteryuan">
+    <v-layout wrap class="filiteryuan">
       <div v-for="(item, index) in items">
         <v-btn color="error">{{item.content}}</v-btn>
       </div>
@@ -25,17 +25,23 @@
       </div>
     </v-layout>
     <v-layout row align-start justify-center wrap class="sousuo">
-      
-        <v-flex md2 xs2><v-toolbar-side-icon ></v-toolbar-side-icon></v-flex>
-        <v-flex md4 xs10><v-toolbar-title style="line-height:100%;">学号搜索</v-toolbar-title></v-flex>
-        <v-flex md4 xs10><v-text-field label="Solo" placeholder="Placeholder" solo></v-text-field></v-flex>
-        <v-flex md2 xs2><v-toolbar-side-icon></v-toolbar-side-icon></v-flex>
-      
+      <v-flex md1 xs2>
+        <v-toolbar-side-icon></v-toolbar-side-icon>
+      </v-flex>
+      <v-flex style="height:48px;" md1 xs10>
+        <v-toolbar-title style="height:100%;line-height:100%;padding-top:14px;">学号搜索</v-toolbar-title>
+      </v-flex>
+      <v-flex md1 xs2>
+        <v-toolbar-side-icon></v-toolbar-side-icon>
+      </v-flex>
+      <v-flex md9 xs10>
+        <v-text-field label="Solo" placeholder="输入学号或姓名" solo></v-text-field>
+      </v-flex>
     </v-layout>
 
     <v-layout row wrap class="card-container">
-      <v-flex md6 xs12  v-for="person in persons">
-        <v-card color="#26c6da"  dark>
+      <v-flex md6 xs12 v-for="person in persons">
+        <v-card color="#337ab7" :class="{ 'pink': person.gender=='M' }" dark>
           <v-card-title>
             <v-icon large left>mdi-twitter</v-icon>
             <span class="headline font-weight-bold">{{person.title}}</span>
@@ -68,8 +74,6 @@
         </v-card>
       </v-flex>
     </v-layout>
-
-    <HelloWorld/>
   </v-container>
 </template>
 
@@ -83,13 +87,76 @@ export default {
       
       items: [
         {
-          content: "航天",
+          content: "全部",
+          yuan: 0
+        },
+        {
+          content: "航空宇航学院",
           yuan: 1
         },
         {
-          content: "航空",
+          content: "能源与动力学院",
           yuan: 2
-        }
+        },
+        {
+          content: "自动化学院",
+          yuan: 2
+        },
+        {
+          content: "电子信息工程学院",
+          yuan: 2
+        },
+        {
+          content: "机电学院",
+          yuan: 2
+        },
+        {
+          content: "材料科学与技术学院",
+          yuan: 2
+        },
+        {
+          content: "民航（飞行）学院	",
+          yuan: 2
+        },
+        {
+          content: "经济与管理学院",
+          yuan: 2
+        },
+        {
+          content: "人文与社会科学学院",
+          yuan: 2
+        },
+        {
+          content: "艺术学院",
+          yuan: 2
+        },
+        {
+          content: "外国语学院",
+          yuan: 2
+        },
+        {
+          content: "航天学院",
+          yuan: 2
+        },
+        {
+          content: "计算机科学与技术学院",
+          yuan: 2
+        },
+        {
+          content: "马克思主义学院",
+          yuan: 2
+        },
+        {
+          content: "国际教育学院",
+          yuan: 2
+        },
+        {
+          content: "继续教育学院",
+          yuan: 2
+        },
+        
+		        
+									
       ],
       persons: [
         {
@@ -179,5 +246,14 @@ a {
 }
 .sousuo {
   margin: 20px 0 5px 0;
+}
+.v-card {
+  margin: 1%;
+}
+.blue {
+  background-color: #337ab7;
+}
+.pink {
+  background-color: #bf360c;
 }
 </style>
