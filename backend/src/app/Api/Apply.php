@@ -7,7 +7,7 @@ use PhalApi\Exception\BadRequestException;
 
 use function \PhalApi\DI as di;
 
-// use App\Domain\Front as DFront;
+use App\Domain\Apply as DApply;
 // use App\Domain\GTCode as DGTCode;
 // use App\Domain\Ded as DDed;
 // use App\Domain\User as DUser;
@@ -21,7 +21,6 @@ use function \PhalApi\DI as di;
  */
 
 class Apply extends Api {
-
 
 	public function getRules() {
         return [
@@ -62,11 +61,16 @@ class Apply extends Api {
                     'require' => true,
                 ]
             ],
+            'xss' => [
+                'html' => [
+                    'name' => 'html',
+                ]
+            ]
         ];
 	}
     
     function __construct() {
-        // $this->Front = new DFront();
+        $this->Apply = new DApply();
         // $this->GTCode = new DGTCode();
         // $this->Ded = new DDed();
         // $this->User = new DUser();
@@ -92,6 +96,9 @@ class Apply extends Api {
         ];
     }
 
+    public function xss(){
+        return $this->Apply->xssFilter($this->html);
+    }
     /**
      * 获取所有文章
      *
