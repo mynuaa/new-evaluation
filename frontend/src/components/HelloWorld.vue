@@ -18,6 +18,7 @@
           Welcome to Vuetify 这个应该是五四评优的首页~
         </h1>
         <p class="subheading font-weight-regular">
+          {{$t('message')}}<br>
           For help and collaboration with other Vuetify developers,
           <br>please join our online
           <a href="https://community.vuetifyjs.com" target="_blank">Discord Community</a>

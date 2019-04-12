@@ -24,5 +24,14 @@ module.exports = {
   pwa: {
     name: '小红帽',
     themeColor: 'rgba(0,0,0,.87)'
+  },
+
+  pluginOptions: {
+    i18n: {
+      locale: 'zh',
+      fallbackLocale: 'en',
+      localeDir: 'locales',
+      enableInSFC: false
+    }
   }
 }
