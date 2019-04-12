@@ -24,8 +24,8 @@
         </v-card>
     </v-flex>
     </v-layout>
-    <MyRecommendMessage topic1="66" content1="6"></MyRecommendMessage>
-  <v-layout  row wrap class="Recommendation_message">
+    <MyRecommendMessage topic1="634342342342343243246" content1="6"></MyRecommendMessage>
+  <v-layout  column  wrap class="Recommendation_message">
     <v-flex md12 >
       <v-card dark color="purple">
             <v-card-text>你已投同学院{{same_yuan}}票，不同学院{{different_yuan}}票</v-card-text>
