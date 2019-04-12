@@ -8,12 +8,33 @@
         <router-link to="/apply">new</router-link>|
         <router-link to="/myrecommendations">我的推荐</router-link>|
         <router-link to="/updateinfo">个人信息</router-link>|
-        <router-link to="/about">About</router-link>
+        <router-link to="/about">About</router-link>|
+        <a @click="changeLang">切换语言</a>
       </div>
       <router-view/>
     </v-app>
   </div>
 </template>
+
+<script>
+export default {
+  data(){
+    return {
+
+    }
+  },
+  methods: {
+    changeLang(){
+      if(this.$i18n.locale == 'en'){
+        this.$i18n.locale = 'cn'
+      }else{
+        this.$i18n.locale = 'en'
+      }
+      
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
