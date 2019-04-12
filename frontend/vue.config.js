@@ -6,7 +6,6 @@ module.exports = {
       // "v-charts": 'v-charts'
     }
   },
-
   devServer: {
     proxy: {
       '/api': {
