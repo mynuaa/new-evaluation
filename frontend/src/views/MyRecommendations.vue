@@ -1,7 +1,6 @@
 <template>
-  <div class="detail">
-    <!-- 具体信息展示页面 -->
-    这里是展示 {{this.$route.params.id}} 的详情{{msg}}
+  <div>
+    这里显示的是我的推荐的信息
   </div>
 </template>
 

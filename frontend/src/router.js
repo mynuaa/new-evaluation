@@ -21,12 +21,12 @@ export default new Router({
     {
       path: '/apply',//写文章
       name: 'apply',
-      component: Home
+      component: () => import('./views/New.vue')
     },
     {
       path: '/myrecommendations',//我的推荐
       name: 'myrecommendations',
-      component: Home
+      component: () => import('./views/MyRecommendations.vue')
     },
     {
       path: '/updateinfo',//更新个人信息
@@ -40,6 +40,11 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '*',
+      name: '404',
+      component: Home
     }
   ]
 })
