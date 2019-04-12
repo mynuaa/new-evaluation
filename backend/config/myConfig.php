@@ -12,6 +12,10 @@ return [
     'prefix' => '',
 	//'socket' => '/tmp/mysql.sock',
     ],
+    'jwt' => [
+		'iss' => 'nuaa.edu.cn',
+		'key' => '1Th1nkNuaaXia0i$g0od!'
+    ],
     'redis' => [
         'type' => '', //unix
         'socket' => '', //unix对应
@@ -22,5 +26,5 @@ return [
         'auth' => '',
         'db' => 0
     ],
-    'debug' => false
+    'debug' => true
 ];

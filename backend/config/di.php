@@ -31,7 +31,10 @@ $di->debug = !empty($_GET['__dddebug']) ? true : $di->config->get('myConfig.debu
 $di->logger = new FileLogger(API_ROOT . '/runtime', Logger::LOG_LEVEL_DEBUG | Logger::LOG_LEVEL_INFO | Logger::LOG_LEVEL_ERROR);
 
 // 数据操作 - 基于NotORM
-$di->notorm = new NotORMDatabase($di->config->get('dbs'), $di->debug);
+// $di->notorm = new NotORMDatabase($di->config->get('dbs'), $di->debug);
+
+//jwt扩展
+$di->jwt = new \Phalapi\JWT\Lite($di->config->get('myConfig.jwt.key'));
 
 //强制中文json
 $di->response = new \PhalApi\Response\JsonResponse(JSON_UNESCAPED_UNICODE);
