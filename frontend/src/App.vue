@@ -7,6 +7,7 @@
         <router-link to="/show/111">一篇文章</router-link>|
         <router-link to="/apply">new</router-link>|
         <router-link to="/myrecommendations">我的推荐</router-link>|
+        <router-link to="/updateinfo">个人信息</router-link>|
         <router-link to="/about">About</router-link>
       </div>
       <router-view/>

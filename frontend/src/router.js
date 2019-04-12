@@ -31,7 +31,7 @@ export default new Router({
     {
       path: '/updateinfo',//更新个人信息
       name: 'updateinfo',
-      component: Home
+      component: () => import('./views/UserInfo.vue')
     },
     {
       path: '/about',
