@@ -23,7 +23,6 @@ use App\Domain\User as DUser;
 
 class Admin extends Api {
 
-
 	public function getRules() {
         return [
             'beforeLogin' => [
@@ -402,7 +401,7 @@ class Admin extends Api {
     }
 
     /**
-     * 登录之前获取chanllenge
+     * 登录之前获取chanllenge - 验证码
      *
      * @return strings 挑战id
      */
@@ -422,6 +421,7 @@ class Admin extends Api {
     //     }
     //      return $this->User->AddSstu($this->stuid,$this->password,$this->gender,$this->uname);
     //  }
+    
     /**
      * 登录
      *

@@ -52,7 +52,12 @@ class User extends Api {
         // $this->Act = new DActivity();
         // $this->Join = new DJoin();
     }
-
+    /**
+     * 获取个人信息 - 姓名 头像
+     *
+     * @return void
+     */
+    //TODO: 需要实现
     public function getInfo(){
         $re = $this->checkJwt();
         $stuid = $re['stuid'];
@@ -62,8 +67,23 @@ class User extends Api {
         }
         return $info;
     }
+    /**
+     * 设置个人信息
+     *
+     * @return void
+     */
+    //TODO: 需要实现
+    public function setInfo(){
 
-    public function getJoin(){
+    }
+
+    /**
+     * 获取自己参与的评优
+     *
+     * @return void
+     */
+    //TODO: 需要实现
+    public function getMyApply(){
         $re = $this->checkJwt();
         $stuid = $re['stuid'];
         $join = $this->Join->getByStuid($stuid);
@@ -76,6 +96,7 @@ class User extends Api {
      *
      * @return void
      */
+    //TODO: 需要实现
     public function login(){
 
         $this->stuid = trim($this->stuid);

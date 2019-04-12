@@ -74,7 +74,7 @@ class Apply extends Api {
         // $this->GTCode = new DGTCode();
         // $this->Ded = new DDed();
         // $this->User = new DUser();
-        // $this->Act = new DActivity();
+        // $this->Apply = new DActivity();
         // $this->Join = new DJoin();
     }
 
@@ -95,18 +95,26 @@ class Apply extends Api {
             'time' => $_SERVER['REQUEST_TIME'],
         ];
     }
-
-    public function xss(){
+    /**
+     * 测试接口 - 获取xss过滤之后的结果
+     *
+     * @return void
+     */
+    
+     public function xss(){
         return $this->Apply->xssFilter($this->html);
     }
+
     /**
      * 获取所有文章
      *
      * @return void
      */
+    //TODO: 需要实现
+    //TODO: 当年/往年
     public function all(){
 
-        $re = $this->Act->gets($this->from, $this->pagenum, false, $this->hid);
+        $re = $this->Apply->gets($this->from, $this->pagenum, false, $this->hid);
 
         return $re;
     }
@@ -116,12 +124,52 @@ class Apply extends Api {
      *
      * @return void
      */
+    //TODO: 需要实现
     public function get(){
-        $re = $this->Act->get($this->id);
+        $re = $this->Apply->get($this->id);
 
         return $re;
     }
 
+    /**
+     * 按学号查找文章
+     *
+     * @return void
+     */
+    //TODO: 需要实现
+    public function getByStuid(){
+
+    }
+
+    /**
+     * 按院查找文章
+     *
+     * @return void
+     */
+    //TODO: 需要实现
+    public function getByCollege(){
+
+    }
+
+    /**
+     * 新建文章
+     *
+     * @return void
+     */
+    //TODO: 需要实现
+    public function add(){
+        
+    }
+
+    /**
+     * 修改文章
+     *
+     * @return void
+     */
+    //TODO: 需要实现
+    public function update(){
+
+    }
 
     /**
      * 获取统计数据
@@ -141,7 +189,7 @@ class Apply extends Api {
         }
         
         $re['yuan'] = $yuan;
-        $re['actNum'] = $this->Act->countNum();
+        $re['actNum'] = $this->Apply->countNum();
         $re['joinNum'] = $this->Join->countNum();
         return $re;
     }
