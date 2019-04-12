@@ -15,7 +15,7 @@ use App\Domain\User as DUser;
 // use App\Domain\Join as DJoin;
 
 /**
- * 用户后台
+ * 用户接口
  *
  * @author: Seiry Yu
  */
@@ -71,19 +71,55 @@ class User extends Api {
         return $join;
     }
 
-    public function validJoin(){
-        $re = $this->checkJwt();
-        $stuid = $re['stuid'];
-        $check = $this->Join->checkStuOwn($stuid, $this->jid);
-        if($check === false){
-            throw new Exception('查无此飞机~', 404);
-        }
-        if($check !== true){
-            throw new Exception('已经认证过了哦...', 203);
+    /**
+     * 登陆
+     *
+     * @return void
+     */
+    public function login(){
+
+        $this->stuid = trim($this->stuid);
+
+        // $dxtest = $this->DXCode->valid($this->dx);
+        // if($dxtest != true){
+        //     throw new Exception('验证码错误', 500);//验证码部分
+        // }
+
+        $ded = $this->Ded->verify($this->stuid, $this->passwd);
+        if($ded === false){
+            throw new Exception('密码或用户名错误', 403);//验证密码部分
         }
 
-        return $this->Join->validJid($stuid, $this->jid);
+      //  $admin = $this->User->isAdmin($this->stuid);
+       // return $this->User->encode($ded['name'], $this->stuid, $admin);//注释掉测试代码
 
+       /*
+        if($this->Ded->binded($this->stuid)){//已经绑定 老用户
+            //返回jwt
+            $admin = $this->User->isAdmin($this->stuid);
+            return $this->User->encode($ded['name'], $this->stuid, $admin);
+        }else{
+            // ？是否要激活？
+            //to do 怎么搞？
+            $re = $this->User->bindUser($this->stuid,$ded);
+            
+            throw new Exception('请确认绑定', 199);
+        }
+
+        */
+        if(!$this->Ded->binded($this->stuid)){//已经绑定 老用户  自动绑定
+            $re = $this->User->bindUser($this->stuid, $ded);
+            if(!$re){
+                throw new Exception('数据库错误', 500);
+            }
+        }
+
+        $admin = $this->User->isAdmin($this->stuid);
+        return $this->User->encode($ded['name'], $this->stuid, $admin);
+
+
+        //判断是否是新注册
+        //正常的业务逻辑
     }
 
     private function checkJwt(){

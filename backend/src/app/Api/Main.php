@@ -49,7 +49,4 @@ class Main extends Api {
         ];
     }
     
-    public function (){
-        
-    }
 }
