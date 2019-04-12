@@ -24,24 +24,24 @@
         <a href="mailto:zfj@nuaa.edu.cn">zfj@nuaa.edu.cn</a>，方便技术人员定位错误，及时解决并回复。
       </div>
     </v-layout>
-    <v-layout align-start justify-center row class="sousuo">
-      <v-toolbar-side-icon md2 xs4></v-toolbar-side-icon>
-      <v-toolbar-title class="title mr-4" md4 xs8>学号搜索</v-toolbar-title>
-      <v-text-field label="Solo" placeholder="Placeholder" solo md4 xs8></v-text-field>
-      <v-toolbar-side-icon md2 xs4></v-toolbar-side-icon>
+    <v-layout row align-start justify-center wrap class="sousuo">
+      
+        <v-flex md2 xs2><v-toolbar-side-icon ></v-toolbar-side-icon></v-flex>
+        <v-flex md4 xs10><v-toolbar-title style="line-height:100%;">学号搜索</v-toolbar-title></v-flex>
+        <v-flex md4 xs10><v-text-field label="Solo" placeholder="Placeholder" solo></v-text-field></v-flex>
+        <v-flex md2 xs2><v-toolbar-side-icon></v-toolbar-side-icon></v-flex>
+      
     </v-layout>
 
-    <div class="card-container">
-      <div xs12 md6 v-for="person in persons">
-        <v-card class="mx-auto" color="#26c6da" dark max-width="400">
+    <v-layout row wrap class="card-container">
+      <v-flex md6 xs12  v-for="person in persons">
+        <v-card color="#26c6da"  dark>
           <v-card-title>
             <v-icon large left>mdi-twitter</v-icon>
-            <span class="title font-weight-light">Twitter</span>
+            <span class="headline font-weight-bold">{{person.title}}</span>
           </v-card-title>
 
-          <v-card-text
-            class="headline font-weight-bold"
-          >"Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."</v-card-text>
+          <v-card-text class="title font-weight-light">{{person.summary}}</v-card-text>
 
           <v-card-actions>
             <v-list-tile class="grow">
@@ -53,21 +53,22 @@
               </v-list-tile-avatar>
 
               <v-list-tile-content>
-                <v-list-tile-title>Evan You</v-list-tile-title>
+                <v-list-tile-title>{{person.name}}</v-list-tile-title>
               </v-list-tile-content>
 
               <v-layout align-center justify-end>
                 <v-icon class="mr-1">mdi-heart</v-icon>
-                <span class="subheading mr-2">256</span>
+                <span class="subheading mr-2">{{person.watch}}</span>
                 <span class="mr-1">·</span>
                 <v-icon class="mr-1">mdi-share-variant</v-icon>
-                <span class="subheading">45</span>
+                <span class="subheading">{{person.recommand}}</span>
               </v-layout>
             </v-list-tile>
           </v-card-actions>
         </v-card>
-      </div>
-    </div>
+      </v-flex>
+    </v-layout>
+
     <HelloWorld/>
   </v-container>
 </template>
@@ -79,6 +80,7 @@ import Banner from "../components/banner";
 export default {
   data() {
     return {
+      
       items: [
         {
           content: "航天",
@@ -87,6 +89,63 @@ export default {
         {
           content: "航空",
           yuan: 2
+        }
+      ],
+      persons: [
+        {
+          title: "南航外院的男孩子是怎样的存在?",
+          avater: "",
+          name: "刘敏杰",
+          gender: true,
+          summary:
+            "作为外国语学院大一的新生，我带着对语言学习的热爱开始了在南航的第一年，让我来给大家讲讲外国语学院的男生的生活",
+          pic: "",
+          watch: 233,
+          recommand: 19
+        },
+        {
+          title: "南航外院的男孩子是怎样的存在?",
+          avater: "",
+          name: "刘敏杰",
+          gender: "M",
+          summary:
+            "作为外国语学院大一的新生，我带着对语言学习的热爱开始了在南航的第一年，让我来给大家讲讲外国语学院的男生的生活",
+          pic: "",
+          watch: 233,
+          recommand: 19
+        },
+        {
+          title: "南航外院的男孩子是怎样的存在?",
+          avater: "",
+          name: "刘敏杰",
+          gender: "M",
+          summary:
+            "作为外国语学院大一的新生，我带着对语言学习的热爱开始了在南航的第一年，让我来给大家讲讲外国语学院的男生的生活",
+          pic: "",
+          watch: 233,
+          recommand: 19
+        },
+        {
+          title: "南航外院的男孩子是怎样的存在?",
+          avater: "",
+          name: "刘敏杰",
+          gender: "F",
+          summary:
+            "作为外国语学院大一的新生，我带着对语言学习的热爱开始了在南航的第一年，让我来给大家讲讲外国语学院的男生的生活",
+          pic: "",
+          watch: 233,
+          recommand: 19
+        },
+        {
+          title: "南航外院的男孩子是怎样的存在?",
+          avater: "",
+          name: "刘敏杰",
+          gender: "F",
+          summary:
+            "作为外国语学院大一的新生，我带着对语言学习的热爱开始了在南航的第一年，让我来给大家讲讲外国语学院的男生的生活",
+          pic: "",
+          watch: 233,
+          recommand: 19
         }
       ]
     };
@@ -119,8 +178,6 @@ a {
   color: #bf360c;
 }
 .sousuo {
-  margin: 5px 0;
-  display: flex;
-  flex-direction: row;
+  margin: 20px 0 5px 0;
 }
 </style>
