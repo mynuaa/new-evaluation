@@ -6,17 +6,18 @@ use PhalApi\Exception;
 use PhalApi\Exception\BadRequestException;
 
 use function \PhalApi\DI as di;
-use App\Domain\Imagei as DImagei;
+// use App\Domain\Imagei as DImagei;
+
 /**
  * 默认接口服务类
  *
  * @author: dogstar <chanzonghuang@gmail.com> 2014-10-04
  */
 
-class Imagei extends Api {
+class Main extends Api {
 
     function __construct() {
-        $this->DImagei = new DImagei();
+        // $this->DImagei = new DImagei();
     }
 	public function getRules() {
         return [
@@ -46,5 +47,6 @@ class Imagei extends Api {
             'version' => PHALAPI_VERSION,
             'time' => $_SERVER['REQUEST_TIME'],
         ];
-	}
+    }
+    
 }

@@ -9,9 +9,29 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '/',//主页
       name: 'home',
       component: Home
+    },
+    {
+      path: '/show/:id',//文章展示
+      name: 'detailShow',
+      component: () => import('./views/Detail.vue')
+    },
+    {
+      path: '/apply',//写文章
+      name: 'apply',
+      component: () => import('./views/New.vue')
+    },
+    {
+      path: '/myrecommendations',//我的推荐
+      name: 'myrecommendations',
+      component: () => import('./views/MyRecommendations.vue')
+    },
+    {
+      path: '/updateinfo',//更新个人信息
+      name: 'updateinfo',
+      component: () => import('./views/UserInfo.vue')
     },
     {
       path: '/about',
@@ -20,6 +40,11 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '*',
+      name: '404',
+      component: Home
     }
   ]
 })
