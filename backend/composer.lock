@@ -1,0 +1,207 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "074eaee4023ca166ee7a9a5cbd540932",
+    "packages": [
+        {
+            "name": "phalapi/kernal",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phalapi/kernal.git",
+                "reference": "75f10dd95930721d7959d5f058ba1c8d2f4d1c14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phalapi/kernal/zipball/75f10dd95930721d7959d5f058ba1c8d2f4d1c14",
+                "reference": "75f10dd95930721d7959d5f058ba1c8d2f4d1c14",
+                "shasum": ""
+            },
+            "require": {
+                "phalapi/notorm": "2.3.0",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/bootstrap.php",
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "PhalApi\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Dogstar Huang",
+                    "email": "chanzonghuang@gmail.com",
+                    "homepage": "http://my.oschina.net/dogstar",
+                    "role": "Developer"
+                },
+                {
+                    "name": "kwan",
+                    "email": "303198069@qq.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PhalApi 2.x 框架核心部分。",
+            "homepage": "https://www.phalapi.net/",
+            "keywords": [
+                "api",
+                "framework",
+                "phalapi"
+            ],
+            "time": "2019-02-19T06:51:42+00:00"
+        },
+        {
+            "name": "phalapi/notorm",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phalapi/notorm.git",
+                "reference": "a35e6ce3557b1c4559fefc1de366f28d866f2776"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phalapi/notorm/zipball/a35e6ce3557b1c4559fefc1de366f28d866f2776",
+                "reference": "a35e6ce3557b1c4559fefc1de366f28d866f2776",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhalApi\\NotORM\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Dogstar Huang",
+                    "email": "chanzonghuang@gmail.com",
+                    "homepage": "http://my.oschina.net/dogstar",
+                    "role": "Developer"
+                }
+            ],
+            "description": "基于NotORM类库的优化版本，专门用于PhalApi 2.x 开源接口框架。",
+            "homepage": "http://www.phalapi.net",
+            "keywords": [
+                "api",
+                "notorm",
+                "phalapi"
+            ],
+            "time": "2018-12-09T07:58:36+00:00"
+        },
+        {
+            "name": "phalapi/qrcode",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phalapi/qrcode.git",
+                "reference": "cbb3c5f3f95a7902b0a72786a77495ada0c006b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phalapi/qrcode/zipball/cbb3c5f3f95a7902b0a72786a77495ada0c006b7",
+                "reference": "cbb3c5f3f95a7902b0a72786a77495ada0c006b7",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhalApi\\QrCode\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "dogstar huang",
+                    "email": "chanzonghuang@gmail.com",
+                    "homepage": "http://my.oschina.net/dogstar",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PhalApi 2.x 扩展类库：基于QRCode实现的二维码扩展",
+            "homepage": "https://www.phalapi.net/",
+            "keywords": [
+                "phalapi",
+                "phalapi-qrcode",
+                "qrcode",
+                "二维码"
+            ],
+            "time": "2017-12-29T12:03:03+00:00"
+        },
+        {
+            "name": "phalapi/task",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phalapi/task.git",
+                "reference": "552421219a3097a81c576fc2607d96894d489def"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phalapi/task/zipball/552421219a3097a81c576fc2607d96894d489def",
+                "reference": "552421219a3097a81c576fc2607d96894d489def",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhalApi\\Task\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Dogstar Huang",
+                    "email": "chanzonghuang@gmail.com",
+                    "homepage": "http://my.oschina.net/dogstar",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PhalApi 2.x 扩展类库 - Task计划任务，以接口服务形式实现的新型计划任务。",
+            "homepage": "https://www.phalapi.net/",
+            "keywords": [
+                "phalapi",
+                "phalapi-task",
+                "task"
+            ],
+            "time": "2018-04-24T14:25:40+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "phalapi/qrcode": 20,
+        "phalapi/task": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.3.3"
+    },
+    "platform-dev": []
+}
