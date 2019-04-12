@@ -8,6 +8,8 @@
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
   },
   "dependencies": {
+    "@tinymce/tinymce-vue": "^2.0.0",
+    "tinymce": "^5.0.3",
     "vue": "^2.6.6",
     "vue-i18n": "^8.0.0",
     "vue-router": "^3.0.1",
