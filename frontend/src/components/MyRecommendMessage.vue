@@ -1,11 +1,11 @@
 <!-- 各人推荐模块里的每一个推荐模块 -->
 <template>
   <div class="all">
-        <v-container grid-list-xs>
+        <v-container grid-list-xs px2>
              <v-layout row wrap class="top">
                     <v-flex md10>
                         <v-card>
-                            <v-card-text>{{topic1}}</v-card-text>
+                            <v-card-text>{{topic}}</v-card-text>
                         </v-card>
                     </v-flex>
                     <v-flex md2>
@@ -18,7 +18,7 @@
              <v-layout row wrap class="top">
                  <v-flex md12>
                      <v-card>
-                            <v-card-text>{{content1}}</v-card-text>
+                            <v-card-text>{{content}}</v-card-text>
                         </v-card>
                  </v-flex>
              </v-layout>
@@ -31,8 +31,8 @@ export default {
   name: 'MyRecommendMessage',
   props: {
     msg: String,
-    content1:String,
-    topic1:String
+    content:String,
+    topic:String
   }
 }
 </script>
@@ -41,15 +41,12 @@ export default {
 <style scoped lang="scss">
 .all{
     border-style: solid solid solid solid;
-    border-color: blue;
+    border-color: rgb(161, 161, 161);
     position: relative;
+    border-radius: 30px;    
 }
-.topic{
-    position:absolute;
-    top:0px;
-    left:0px;
-    height: 50px;
-    width: 80%;
-    font-display: 0px;
+.all:hover{
+    border-color: rgb(218, 66, 66);
+    transition: all 1.6s;
 }
 </style>
